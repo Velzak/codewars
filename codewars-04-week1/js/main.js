@@ -19,33 +19,54 @@ console.log(
 );
 
 //Is this a triangle?
-function isTriangle(a,b,c) {
-  return a + b > c && b + c > a && a + c > b
+function isTriangle(a, b, c) {
+  return a + b > c && b + c > a && a + c > b;
 }
 
-//Create a Like System 
+//Create a Like System
 
 function likes(names) {
   switch (names.length) {
     case 0:
-      return `no one likes this`
+      return `no one likes this`;
     case 1:
-      return `${names[0]} likes this`
+      return `${names[0]} likes this`;
     case 2:
-      return `${names[0]} and ${names[1]} like this`
+      return `${names[0]} and ${names[1]} like this`;
     case 3:
-      return `${names[0]}, ${names[1]} and ${names[2]} like this`
+      return `${names[0]}, ${names[1]} and ${names[2]} like this`;
     default:
-      return `${names[0]}, ${names[1]} and ${names.length - 2} others like this`
+      return `${names[0]}, ${names[1]} and ${
+        names.length - 2
+      } others like this`;
   }
 }
 
-console.log(likes(["Alex", "Jacob", "Mark", "Max", '']))
+console.log(likes(["Alex", "Jacob", "Mark", "Max", ""]));
 
 //Your task is to write a function that takes a string and return a new string with all vowels removed.
 
 function disemvowel(str) {
-  return str.replace(/[aeiou]/ig,'')
+  return str.replace(/[aeiou]/gi, "");
 }
 
-console.log(disemvowel(("This website is for losers LOL!")))
+console.log(disemvowel("This website is for losers LOL!"));
+
+function getSum(a, b) {
+  let greater = 0;
+  let lesser = 0;
+  let sum = 0;
+  if (a > b) {
+    greater = a;
+    lesser = b;
+  } else {
+    greater = b;
+    lesser = a;
+  }
+  for (let i = lesser; i <= greater; i++) {
+    sum += i;
+  }
+  return sum;
+}
+
+console.log(getSum(0, -1));

@@ -70,3 +70,11 @@ function getSum(a, b) {
 }
 
 console.log(getSum(0, -1));
+
+//Descending Order of number in random order
+function descendingOrder(n){
+  const s = n.toString().split('')
+  return Number(s.sort((a, b) => b- a).join(''))
+}
+
+console.log(descendingOrder(1021))

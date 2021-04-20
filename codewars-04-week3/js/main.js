@@ -35,3 +35,17 @@ function refactoredReverseFizzBuzz(array) {
   return [fizz, buzz]
 }
 
+
+//Prefill an array 
+
+function prefill(n, v) {
+  let arr = []
+  if (isNaN(n) || !isFinite(n) || n < 0 || typeof(n) === 'boolean' || n % 1 !== 0){
+    throw new TypeError(`${n} is invalid`)
+  }
+  parseInt(n)
+  for (let i = 0; i < n; i++) {
+    arr.push(v)
+  }
+  return arr
+}

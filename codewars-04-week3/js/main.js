@@ -30,22 +30,71 @@ console.log(reverseFizzBuzz([1, 2, "Fizz", 4, "Buzz"]));
 
 //refactored
 function refactoredReverseFizzBuzz(array) {
-  let fizz = (array.indexOf("Fizz") + 1) ? array.indexOf("Fizz") + 1 : array.indexOf('FizzBuzz') + 1
-  let buzz = (array.indexOf('Buzz') + 1) ? array.indexOf('Buzz') + 1 : array.indexOf('FizzBuzz') + 1
-  return [fizz, buzz]
+  let fizz =
+    array.indexOf("Fizz") + 1
+      ? array.indexOf("Fizz") + 1
+      : array.indexOf("FizzBuzz") + 1;
+  let buzz =
+    array.indexOf("Buzz") + 1
+      ? array.indexOf("Buzz") + 1
+      : array.indexOf("FizzBuzz") + 1;
+  return [fizz, buzz];
 }
 
-
-//Prefill an array 
+//Prefill an array
 
 function prefill(n, v) {
-  let arr = []
-  if (isNaN(n) || !isFinite(n) || n < 0 || typeof(n) === 'boolean' || n % 1 !== 0){
-    throw new TypeError(`${n} is invalid`)
+  let arr = [];
+  if (
+    isNaN(n) ||
+    !isFinite(n) ||
+    n < 0 ||
+    typeof n === "boolean" ||
+    n % 1 !== 0
+  ) {
+    throw new TypeError(`${n} is invalid`);
   }
-  parseInt(n)
+  parseInt(n);
   for (let i = 0; i < n; i++) {
-    arr.push(v)
+    arr.push(v);
   }
-  return arr
+  return arr;
 }
+
+//Animal Class
+
+class Animal {
+  constructor(name, type) {
+    this.name = name;
+    this.type = type;
+  }
+  toString() {
+    return `${this.name} is a ${this.type}`;
+  }
+}
+
+//Meeting replace names and uppercase
+
+function meeting(s) {
+  let names = s.toUpperCase().split(/[;:]/);
+  let firstName = [];
+  let lastName = [];
+  let fullNames = [];
+  for (let i = 0; i < names.length; i++) {
+    if (i % 2 === 0) {
+      firstName.push(names[i]);
+    } else {
+      lastName.push(names[i]);
+    }
+  }
+  for (let i = 0; i < firstName.length; i++) {
+    fullNames.push([`(${lastName[i]}, ${firstName[i]})`]);
+  }
+  return fullNames.sort().join("");
+}
+
+console.log(
+  meeting(
+    "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"
+  )
+);

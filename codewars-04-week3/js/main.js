@@ -98,3 +98,32 @@ console.log(
     "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"
   )
 );
+
+//Remake Math.round, Math.ceil, and Math.floor functions
+
+Math.round = function (number) {
+  //if number to the right of the deciaml is above 4, round the number to left of deciaml one above.  Othewise round down
+  let numStr = number.toString().split(".");
+  if (numStr.length > 1) {
+    if (parseInt(numStr[1].substring(0, 1)) >= 5) {
+      return parseInt([numStr[0]]) + 1;
+    }
+  }
+  return parseInt(numStr[0]);
+};
+
+Math.ceil = function (number) {
+  let numStr = number.toString().split(".");
+  if (parseInt(numStr[1]) > 0) {
+    return parseInt(numStr[0]) + 1;
+  } else {
+    return parseInt(numStr[0]);
+  }
+};
+
+Math.floor = function (number) {
+  let numStr = number.toString().split(".");
+  return parseInt(numStr[0]);
+};
+
+console.log(Math.round(3.43));

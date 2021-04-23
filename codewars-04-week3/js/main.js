@@ -127,3 +127,34 @@ Math.floor = function (number) {
 };
 
 console.log(Math.round(3.43));
+
+function count (string) {  
+  let char, count;
+  let amount = {}
+    for (let i = 0; i < string.length; i++) {
+      char = string.charAt(i)
+
+      count = amount[char]
+      
+      amount[char] = count ? count + 1 : 1
+    }
+
+    return amount
+}
+
+function comp(array1, array2){
+  if(array1 === null || array2 === null){return false}
+
+  array1 = array1.map(t => t**2).sort((a,b) => a-b)
+  array2 = array2.sort((a,b) => a-b)
+  
+  for (let i = 0; i < array1.length; i++) {
+    if(array1[i] !== array2[i]) {return false}
+  }
+  return true
+}
+
+a = [4, 8, 8, 7, 10, 4, 7, 3, 2, 5, 6, 4, 7, 6]
+b = [9, 64, 49, 49, 16, 16, 25, 64, 36, 100, 49, 4, 36, 16]
+
+console.log(comp(a, b))

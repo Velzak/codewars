@@ -11,3 +11,15 @@ function multiplicationTable(row,col){
 }
 
 console.log(multiplicationTable(4,4))
+
+
+function dataReverse(data) {
+  let newArr = []
+  let lengths = data.length / 8
+  for (let i = 0; i < lengths; i++) {
+    let slicedArr = data.slice(data.length - 8, data.length)
+    newArr.push(slicedArr)
+    data.splice(data.length - 8, data.length)
+  }
+  return [].concat.apply([], newArr)
+}

@@ -37,22 +37,28 @@ console.log(solution(10));
 
 function findChildren(dancingBrigade) {
   return [...dancingBrigade]
-    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()) || b.localeCompare(a))
+    .sort(
+      (a, b) =>
+        a.toLowerCase().localeCompare(b.toLowerCase()) || b.localeCompare(a)
+    )
     .join("");
 }
 
 console.log(findChildren("beeeEBb"));
 
-function factorial(n){
+function factorial(n) {
   let sum = 1;
   for (let i = 1; i <= n; i++) {
-    sum *= i
+    sum *= i;
   }
-  return sum
+  return sum;
 }
 
-function list(names){
-  console.log()
+function abbreviate(string) {
+  return string.replace(/[a-z]+/gi, function(word) {
+    let length = word.length
+    return length < 4 ? word : word[0] + (length - 2) + word[length - 1]
+  })
 }
 
-list([{name: 'Bart'},{name: 'Lisa'},{name: 'Maggie'},{name: 'Homer'},{name: 'Marge'}])
+console.log(abbreviate("elephant-ride"));

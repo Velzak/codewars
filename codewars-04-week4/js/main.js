@@ -42,3 +42,17 @@ function findChildren(dancingBrigade) {
 }
 
 console.log(findChildren("beeeEBb"));
+
+function factorial(n){
+  let sum = 1;
+  for (let i = 1; i <= n; i++) {
+    sum *= i
+  }
+  return sum
+}
+
+function list(names){
+  console.log()
+}
+
+list([{name: 'Bart'},{name: 'Lisa'},{name: 'Maggie'},{name: 'Homer'},{name: 'Marge'}])

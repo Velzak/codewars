@@ -62,3 +62,17 @@ function abbreviate(string) {
 }
 
 console.log(abbreviate("elephant-ride"));
+
+function vowelIndices(word){
+  let newArr = []
+  let vowels = 'aeiouyAEIOUY'
+  let splitArr = word.split('')
+  for (let i = 0; i < splitArr.length; i++) {
+    if (vowels.indexOf(splitArr[i]) !== -1){
+      newArr.push(i + 1)
+    }
+  }
+  return newArr
+}
+
+console.log(vowelIndices('apple'))

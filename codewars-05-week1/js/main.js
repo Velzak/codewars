@@ -11,3 +11,11 @@ function isIsogram(str) {
 }
 
 console.log(isIsogram("Rob"));
+
+function solution(nums){
+  return nums === null || nums === undefined || nums === [] ? [] : nums.sort((a,b) => a - b)
+}
+
+
+
+console.log(solution([0, 3, 1]))

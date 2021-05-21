@@ -8,3 +8,10 @@ function lastSurvivor(letters, coords) {
 }
 
 console.log(lastSurvivor('abc', [1, 1]))
+
+
+function solve(arr){
+   return [...new Set(arr.reverse())].reverse()
+}
+
+console.log(solve([1,2,1,2,1,2,3]))

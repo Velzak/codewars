@@ -15,3 +15,11 @@ function solve(arr){
 }
 
 console.log(solve([1,2,1,2,1,2,3]))
+
+function smallEnough(a, limit){
+  for (const i of a) {
+    if( i > limit)
+      return false
+  }
+  return true
+}
